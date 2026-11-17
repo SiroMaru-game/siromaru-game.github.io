@@ -3,154 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>しろまるの制作ノート</title>
+  <title>しろまるのゲーム制作ホワイトボード</title>
   <style>
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      padding: 48px 20px;
-      color: #37363d;
-      background: #d9d3c8;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      padding: 24px 12px;
+      color: #27343a;
+      background: #d6dfe2;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.8;
     }
 
-    .notebook {
-      position: relative;
-      width: min(900px, 100%);
-      min-height: 680px;
+    a { color: #075d7d; overflow-wrap: anywhere; }
+
+    .board {
+      width: min(1000px, 100%);
       margin: auto;
-      padding: 58px 7% 70px 12%;
-      background:
-        linear-gradient(90deg, transparent 0 68px, #e99a9a 69px 71px, transparent 72px),
-        repeating-linear-gradient(#fffdf5 0 39px, #c9d9e5 40px 41px);
-      border-radius: 8px 18px 18px 8px;
-      box-shadow: 10px 12px 0 #b7afa2, 0 25px 55px #514b4033;
+      padding: clamp(20px, 5vw, 52px);
+      background-color: #fffef8;
+      background-image:
+        radial-gradient(circle, #cbd3d5 0 5px, transparent 6px);
+      background-size: 26px 44px;
+      background-repeat: repeat-y;
+      background-position: 18px 20px;
+      border: 12px solid #b6c2c7;
+      border-radius: 22px;
+      box-shadow: 0 12px 0 #8e9da3, 0 28px 60px #25323830;
     }
 
-    .notebook::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 24px;
-      width: 16px;
-      background: radial-gradient(circle, #d9d3c8 0 5px, transparent 6px) 0 12px / 16px 40px repeat-y;
-    }
+    .content { padding-left: clamp(14px, 4vw, 42px); }
 
     .topline {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      border-bottom: 2px solid #45434a;
-      padding-bottom: 12px;
-    }
-
-    .topline span {
-      font-size: .85rem;
-      letter-spacing: .18em;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #607d8b;
+      color: #526873;
+      font-size: .8rem;
+      letter-spacing: .08em;
     }
 
     h1 {
-      margin: 28px 0 26px;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      letter-spacing: .08em;
-      line-height: 1;
+      margin: 24px 0;
+      color: #173f53;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.35;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 22px;
+      background: #f3f8fa;
+      border: 2px solid #a9bdc5;
+      border-radius: 16px;
+      box-shadow: 4px 5px 0 #dce6e9;
     }
 
     .portrait {
-      float: right;
-      width: clamp(130px, 25vw, 220px);
-      margin: 4px 0 20px 24px;
-      transform: rotate(4deg);
-      filter: drop-shadow(5px 7px 0 #d8c795);
+      flex: 0 0 auto;
+      width: 128px;
+      height: 128px;
+      padding: 7px;
+      border: 4px solid #4386a0;
+      border-radius: 50%;
+      background: white;
+      object-fit: contain;
     }
 
-    .pencil {
-      position: absolute;
-      top: 110px;
-      right: -30px;
-      width: 18px;
-      height: 190px;
-      border-radius: 9px 9px 3px 3px;
-      background: linear-gradient(90deg, #e1a72f 0 22%, #ffd45d 23% 78%, #d69422 79%);
-      transform: rotate(17deg);
-      box-shadow: 3px 5px 0 #0002;
-    }
+    .profile h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .profile p { margin: 4px 0; }
+    .name { color: #173f53; font-size: 1.4rem; font-weight: 800; }
+    .motto { color: #a34343; font-weight: 700; }
 
-    .pencil::before {
-      content: "";
-      position: absolute;
-      top: -17px;
-      left: 2px;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 18px solid #d8bd91;
-    }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
-    .pencil::after {
-      content: "";
-      position: absolute;
-      top: -19px;
-      left: 6px;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-bottom: 7px solid #45434a;
-    }
-
-    .work {
-      clear: both;
-      margin-top: 34px;
-      padding-top: 16px;
-      border-top: 2px solid #45434a;
-    }
-
-    .work h2 {
+    .links a, .play {
       display: inline-block;
-      margin: 0 0 18px;
-      padding: 2px 10px;
-      background: #f4d66d;
-      font-size: 1.15rem;
-      transform: rotate(-1deg);
+      padding: 7px 12px;
+      border-radius: 8px;
+      color: white;
+      background: #28738d;
+      font-weight: 700;
+      text-decoration: none;
     }
 
-    .empty-space {
-      min-height: 150px;
-      border-bottom: 1px dashed #a8b8c2;
+    .links a:hover, .play:hover { background: #174e63; }
+
+    .intro, .memo {
+      margin: 22px 0;
+      padding: 16px 20px;
+      background: #fff5c9;
+      border-left: 6px solid #e2b942;
+      border-radius: 6px 12px 12px 6px;
     }
+
+    .section-title {
+      margin: 42px 0 18px;
+      padding: 8px 14px;
+      color: #173f53;
+      background: #dceff4;
+      border-left: 7px solid #4386a0;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .video-slot {
+      display: grid;
+      min-height: 190px;
+      margin: 18px 0 30px;
+      padding: 20px;
+      place-items: center;
+      color: #526873;
+      text-align: center;
+      background: repeating-linear-gradient(135deg, #f0f4f4 0 12px, #e5edef 12px 24px);
+      border: 2px dashed #9eb4bf;
+      border-radius: 14px;
+    }
+
+    .pickup, .card {
+      margin: 18px 0;
+      padding: clamp(16px, 4vw, 28px);
+      background: white;
+      border: 2px solid #b7c7cc;
+      border-radius: 15px;
+      box-shadow: 4px 5px 0 #e0e7e9;
+    }
+
+    .pickup-label, .number { color: #a34343; font-weight: 800; }
+
+    .pickup h3 {
+      margin: 2px 0 12px;
+      color: #173f53;
+      font-size: 1.55rem;
+    }
+
+    .facts { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0; }
+
+    .facts span {
+      padding: 3px 10px;
+      background: #f1f6f7;
+      border: 1px solid #c3d0d4;
+      border-radius: 999px;
+      font-size: .88rem;
+    }
+
+    .memo h4 { margin: 8px 0 2px; color: #765b16; }
+    .memo p { margin: 4px 0 12px; }
+    .memo p:last-child { margin-bottom: 0; }
+
+    .archive {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card { min-width: 0; margin: 0; padding: 18px; }
+    .card h3 { margin: 0 0 8px; color: #17465d; font-size: 1.05rem; }
+    .card p { margin: 6px 0 14px; }
+    .play { text-align: center; }
 
     footer {
-      margin-top: 20px;
-      text-align: right;
-      font-size: .8rem;
-      letter-spacing: .12em;
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 2px solid #a9bdc5;
+      color: #526873;
+      text-align: center;
+      font-size: .85rem;
     }
 
-    @media (max-width: 600px) {
-      body { padding: 20px 12px; }
-      .notebook { padding: 38px 7% 48px 14%; }
-      .pencil { right: -8px; transform: scale(.75) rotate(17deg); }
+    @media (max-width: 640px) {
+      body { padding: 12px 7px; }
+      .board { padding: 18px 10px; border-width: 7px; border-radius: 16px; }
+      .content { padding-left: 14px; }
+      .topline { font-size: .65rem; letter-spacing: 0; }
+      .profile { flex-direction: column; padding: 18px 12px; text-align: center; }
+      .portrait { width: 116px; height: 116px; }
+      .links { justify-content: center; }
+      .archive { grid-template-columns: 1fr; }
+      .facts span { font-size: .8rem; }
+      .play { display: block; }
     }
   </style>
 </head>
 <body>
-  <main class="notebook">
-    <div class="topline">
-      <span>SHIROMARU</span>
-      <span>制作ノート　01</span>
+  <main class="board">
+    <div class="content">
+      <div class="topline">
+        <span>GAME CREATION / RESEARCH</span>
+        <span>しろまるの制作ホワイトボード</span>
+      </div>
+
+      <h1>しろまるのゲーム制作<br>試行錯誤ホワイトボード</h1>
+
+      <section class="profile" aria-label="自己紹介">
+        <img class="portrait" src="./しろまる.png" alt="しろまるの自画像">
+        <div>
+          <h2>プロフィール</h2>
+          <p class="name">名前：しろまる</p>
+          <p class="motto">思いつきは自由に、ゲーム作りは真剣に。</p>
+          <p>食欲と好奇心で生きています。</p>
+          <p>学校でゲーム制作を学んでいます。</p>
+          <div class="links">
+            <a href="https://x.com/shiroround" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://unityroom.com/users/carrot" target="_blank" rel="noopener noreferrer">unityroom①</a>
+            <a href="https://unityroom.com/users/v591up6r8zemhaqs7fj0" target="_blank" rel="noopener noreferrer">unityroom②</a>
+            <a href="https://siroround.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
+          </div>
+        </div>
+      </section>
+
+      <p class="intro">
+        学校でゲーム制作を学んでいます。これまで1年半で作った全15作品をまとめました。
+        特に見てほしい代表作2作と、これまでの作品を紹介しています。すべてブラウザで遊べます！
+      </p>
+
+      <h2 class="section-title">🎞️ 15作品まとめ動画</h2>
+      <div class="video-slot">ここに15作品をまとめた動画を載せます</div>
+
+      <h2 class="section-title">★ 特に見てほしい代表作</h2>
+
+      <article class="pickup">
+        <span class="pickup-label">PICKUP #01</span>
+        <h3>Change Your Ranking</h3>
+        <div class="facts">
+          <span>ジャンル：カーレース</span>
+          <span>制作期間：1週間</span>
+          <span>Official 2026 Unity Game Jam 投稿作品</span>
+          <span>担当：レベルデザイン・実装</span>
+          <span>Unity / C# / GarageBand</span>
+        </div>
+        <p><strong>目指した体験：</strong>最後まで順位が予測できない、運試しのような体験。</p>
+        <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
+        <div class="memo">
+          <h4>✎ 楽しいところ・企画のこだわり</h4>
+          <p><strong>リスクとリターン：</strong>1位を取ったときの爽快さと、取られたときの悔しさ。</p>
+          <p><strong>気持ちよさ：</strong>1位を取ったときの加速を、2位・3位より強くしました。</p>
+          <p><strong>テストプレイからの改善：</strong>数字の回転が速く目押しが難しかったため、コース序盤はゆっくり、終盤は速くなるよう調整しました。</p>
+          <h4>📌 残っているバグ・今後の研究メモ</h4>
+          <p>車の走行音が大きく聞こえるため、移動入力した瞬間だけエンジン音を入れる方法を考えています。</p>
+        </div>
+      </article>
+
+      <article class="pickup">
+        <span class="pickup-label">PICKUP #02</span>
+        <h3>労うトマト</h3>
+        <div class="facts">
+          <span>ジャンル：バランスアクション</span>
+          <span>制作期間：80時間</span>
+          <span>担当：企画・UI・レベルデザイン・実装</span>
+          <span>Unity / C# / ibisPaint / GarageBand</span>
+        </div>
+        <p><strong>目指した体験：</strong>落とすと悔しい。でもバランスをとること自体が楽しい体験。</p>
+        <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        <div class="memo">
+          <h4>✎ 楽しいところ・企画のこだわり</h4>
+          <p><strong>リスクとリターン：</strong>落ちそうになるハラハラ感と、ギリギリまで傾けて進めた達成感。</p>
+          <p><strong>テストプレイからの改善：</strong>シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。</p>
+          <h4>📌 残っているバグ・今後の研究メモ</h4>
+          <p>方向転換でプレイヤーが滑って見えるため、回転速度を合わせたいと考えています。</p>
+        </div>
+      </article>
+
+      <h2 class="section-title">🗂️ これまでの制作アーカイブ（全15作品）</h2>
+
+      <section class="archive" aria-label="制作したゲーム一覧">
+        <article class="card">
+          <h3><span class="number">01</span> めざせ3776富士ジャンプ</h3>
+          <p>初めて作ったゲーム。シーソーでジャンプして空を飛び、ワンタップ・ワンクリックで富士山のてっぺんをめざそう！</p>
+          <a class="play" href="https://unityroom.com/games/seesaw_jump" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">02</span> 絵あわせゲーム ～おじいちゃんと孫の6年間～</h3>
+          <p>UnityRoom 1Week Game Jam 投稿作品。孫に遊ばれるおじいちゃんの6年間を、やさしい絵あわせで楽しめます。</p>
+          <a class="play" href="https://unityroom.com/games/6years_with_grandpa_and_grandchild" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">03</span> ばい菌！爆破！！</h3>
+          <p>赤バイ菌は爆破できる、青バイ菌は爆破できない。7秒クリアをめざそう！移動は丸スティックまたはWASD、爆破はドクロボタン。</p>
+          <a class="play" href="https://unityroom.com/games/baikinexplosion" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">04</span> Memory Breakdown</h3>
+          <p>ピースを持って狙いをつけて投げよう。同じピースを3つくっつけると消えるゲームです。</p>
+          <a class="play" href="https://unityroom.com/games/memory_breakdown" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">05</span> MAGIC_TILE</h3>
+          <p>空中に魔法陣の足場を作り、ダイヤモンドを集めて進むゲームです。</p>
+          <a class="play" href="https://unityroom.com/games/magic_tile" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">06</span> 俺による俺のための俺のミートスープ</h3>
+          <p>たくさんタップして、彼のなめらかなミートスープを作ろう！スマホはタップ、PCはクリックまたはEnterキー。評価は★～★★★★★。</p>
+          <a class="play" href="https://unityroom.com/games/my_meatsoup" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">07</span> 末期Dr.オフィーリア</h3>
+          <p>お薬をバイ菌にぶつけてやっつけるプッシャーゲーム。カウント数でバイ菌のうめき声が変わります。</p>
+          <a class="play" href="https://unityroom.com/games/terminal_dr_ophelia" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">08</span> ライブ配信：３年付き合った彼氏に振られたけど 友達が突撃させてくれるらしい まじありがとう</h3>
+          <p>移動して友達に突撃！心優しい友達に甘えて、愁いを晴らしましょう。</p>
+          <a class="play" href="https://unityroom.com/games/chargefriends" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">09</span> SPACE BALL</h3>
+          <p>上下キーで玉を避けよう。3回当たるとやり直し！</p>
+          <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">10</span> Master of Absurdity（おためし版）</h3>
+          <p>ステージがあなたの行動に逆らって動く、理不尽アスレチックゲームです。</p>
+          <a class="play" href="https://unityroom.com/games/absurdity" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">11</span> Bubble Hole</h3>
+          <p>バブルを避ける弾幕ゲーム。攻撃手段は突撃。蝶に当たればCLEAR！</p>
+          <a class="play" href="https://unityroom.com/games/bubble_hole" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">12</span> sky HIT</h3>
+          <p>杖をエナジーに当てるだけのゲームです！</p>
+          <a class="play" href="https://unityroom.com/games/skyhit" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">13</span> シロクシーロ</h3>
+          <p>白くなりたいゴーストを助けよう！赤は触れるとゲームオーバー、緑と黄色は左クリックで捕獲。黄色を3体捕まえるとシロクシーロを入手できます。</p>
+          <a class="play" href="https://unityroom.com/games/sirokusiro" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">14</span> 労うトマト</h3>
+          <p>落としそうになるスリルがクセになる！左右キーで青トマトを操り、シーソーを攻略して謎のトマトさんに触れよう！</p>
+          <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+        </article>
+        <article class="card">
+          <h3><span class="number">15</span> Change Your Ranking</h3>
+          <p>左右キーで人数を選択。1人プレイは上キー、マルチプレイはゲームパッドのAボタンで加速。数字に触れると順位やスピードが変化します。</p>
+          <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
+        </article>
+      </section>
+
+      <footer>しろまるのゲーム制作ホワイトボード</footer>
     </div>
-
-    <h1>しろまる</h1>
-
-    <img class="portrait" src="./しろまる.png" alt="しろまる">
-    <div class="pencil" aria-hidden="true"></div>
-
-    <section class="work">
-      <h2>つくったもの</h2>
-      <div class="empty-space"></div>
-    </section>
-
-    <footer>GAME / EXPERIMENT / ARCHIVE</footer>
   </main>
 </body>
 </html>
