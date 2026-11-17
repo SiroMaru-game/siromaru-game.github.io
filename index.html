@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>しろまるのゲーム制作ホワイトボード</title>
+  <title>しろまるの制作試行錯誤ノート</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -18,13 +18,12 @@
 
     a { color: #075d7d; overflow-wrap: anywhere; }
 
-    .board {
+    .notebook {
       width: min(1000px, 100%);
       margin: auto;
       padding: clamp(20px, 5vw, 52px);
       background-color: #fffef8;
-      background-image:
-        radial-gradient(circle, #cbd3d5 0 5px, transparent 6px);
+      background-image: radial-gradient(circle, #cbd3d5 0 5px, transparent 6px);
       background-size: 26px 44px;
       background-repeat: repeat-y;
       background-position: 18px 20px;
@@ -79,7 +78,6 @@
     .profile p { margin: 4px 0; }
     .name { color: #173f53; font-size: 1.4rem; font-weight: 800; }
     .motto { color: #a34343; font-weight: 700; }
-
     .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
     .links a, .play {
@@ -111,17 +109,13 @@
       font-size: clamp(1.3rem, 4vw, 1.8rem);
     }
 
-    .video-slot {
-      display: grid;
-      min-height: 190px;
+    .video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
       margin: 18px 0 30px;
-      padding: 20px;
-      place-items: center;
-      color: #526873;
-      text-align: center;
-      background: repeating-linear-gradient(135deg, #f0f4f4 0 12px, #e5edef 12px 24px);
-      border: 2px dashed #9eb4bf;
+      border: 0;
       border-radius: 14px;
+      background: #17262d;
     }
 
     .pickup, .card {
@@ -177,7 +171,7 @@
 
     @media (max-width: 640px) {
       body { padding: 12px 7px; }
-      .board { padding: 18px 10px; border-width: 7px; border-radius: 16px; }
+      .notebook { padding: 18px 10px; border-width: 7px; border-radius: 16px; }
       .content { padding-left: 14px; }
       .topline { font-size: .65rem; letter-spacing: 0; }
       .profile { flex-direction: column; padding: 18px 12px; text-align: center; }
@@ -190,14 +184,14 @@
   </style>
 </head>
 <body>
-  <main class="board">
+  <main class="notebook">
     <div class="content">
       <div class="topline">
         <span>GAME CREATION / RESEARCH</span>
-        <span>しろまるの制作ホワイトボード</span>
+        <span>制作試行錯誤ノート</span>
       </div>
 
-      <h1>しろまるのゲーム制作<br>試行錯誤ホワイトボード</h1>
+      <h1>しろまるの<br>制作試行錯誤ノート</h1>
 
       <section class="profile" aria-label="自己紹介">
         <img class="portrait" src="./しろまる.png" alt="しろまるの自画像">
@@ -217,12 +211,22 @@
       </section>
 
       <p class="intro">
-        学校でゲーム制作を学んでいます。これまで1年半で作った全15作品をまとめました。
-        特に見てほしい代表作2作と、これまでの作品を紹介しています。すべてブラウザで遊べます！
+        学校でゲーム制作を学んでいます。<br>
+        これまで1年半で作った全15作品をまとめました。<br>
+        特に見てほしい代表作2作と、これまでの作品を紹介しています。<br>
+        すべてブラウザで遊べます！
       </p>
 
       <h2 class="section-title">🎞️ 15作品まとめ動画</h2>
-      <div class="video-slot">ここに15作品をまとめた動画を載せます</div>
+      <iframe
+        class="video"
+        src="https://www.youtube-nocookie.com/embed/RdhwgChA_gA"
+        title="しろまるのゲーム15作品まとめ"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
 
       <h2 class="section-title">★ 特に見てほしい代表作</h2>
 
@@ -236,13 +240,13 @@
           <span>担当：レベルデザイン・実装</span>
           <span>Unity / C# / GarageBand</span>
         </div>
-        <p><strong>目指した体験：</strong>最後まで順位が予測できない、運試しのような体験。</p>
+        <p><strong>目指した体験：</strong><br>最後まで順位が予測できない、運試しのような体験。</p>
         <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
         <div class="memo">
           <h4>✎ 楽しいところ・企画のこだわり</h4>
-          <p><strong>リスクとリターン：</strong>1位を取ったときの爽快さと、取られたときの悔しさ。</p>
-          <p><strong>気持ちよさ：</strong>1位を取ったときの加速を、2位・3位より強くしました。</p>
-          <p><strong>テストプレイからの改善：</strong>数字の回転が速く目押しが難しかったため、コース序盤はゆっくり、終盤は速くなるよう調整しました。</p>
+          <p><strong>リスクとリターン：</strong><br>1位を取ったときの爽快さと、取られたときの悔しさ。</p>
+          <p><strong>気持ちよさ：</strong><br>1位を取ったときの加速を、2位・3位より強くしました。</p>
+          <p><strong>テストプレイからの改善：</strong><br>数字の回転が速く目押しが難しかったため、コース序盤はゆっくり、終盤は速くなるよう調整しました。</p>
           <h4>📌 残っているバグ・今後の研究メモ</h4>
           <p>車の走行音が大きく聞こえるため、移動入力した瞬間だけエンジン音を入れる方法を考えています。</p>
         </div>
@@ -257,12 +261,12 @@
           <span>担当：企画・UI・レベルデザイン・実装</span>
           <span>Unity / C# / ibisPaint / GarageBand</span>
         </div>
-        <p><strong>目指した体験：</strong>落とすと悔しい。でもバランスをとること自体が楽しい体験。</p>
+        <p><strong>目指した体験：</strong><br>落とすと悔しい。でもバランスをとること自体が楽しい体験。</p>
         <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         <div class="memo">
           <h4>✎ 楽しいところ・企画のこだわり</h4>
-          <p><strong>リスクとリターン：</strong>落ちそうになるハラハラ感と、ギリギリまで傾けて進めた達成感。</p>
-          <p><strong>テストプレイからの改善：</strong>シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。</p>
+          <p><strong>リスクとリターン：</strong><br>落ちそうになるハラハラ感と、ギリギリまで傾けて進めた達成感。</p>
+          <p><strong>テストプレイからの改善：</strong><br>シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。</p>
           <h4>📌 残っているバグ・今後の研究メモ</h4>
           <p>方向転換でプレイヤーが滑って見えるため、回転速度を合わせたいと考えています。</p>
         </div>
@@ -273,82 +277,96 @@
       <section class="archive" aria-label="制作したゲーム一覧">
         <article class="card">
           <h3><span class="number">01</span> めざせ3776富士ジャンプ</h3>
-          <p>初めて作ったゲーム。シーソーでジャンプして空を飛び、ワンタップ・ワンクリックで富士山のてっぺんをめざそう！</p>
+          <p>初めて作ったゲームです。<br>シーソーでジャンプして空を飛び、ワンタップ・ワンクリックで富士山のてっぺんをめざそう！</p>
           <a class="play" href="https://unityroom.com/games/seesaw_jump" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">02</span> 絵あわせゲーム ～おじいちゃんと孫の6年間～</h3>
-          <p>UnityRoom 1Week Game Jam 投稿作品。孫に遊ばれるおじいちゃんの6年間を、やさしい絵あわせで楽しめます。</p>
+          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>孫に遊ばれるおじいちゃんの6年間を、やさしい絵あわせで楽しめます。</p>
           <a class="play" href="https://unityroom.com/games/6years_with_grandpa_and_grandchild" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">03</span> ばい菌！爆破！！</h3>
-          <p>赤バイ菌は爆破できる、青バイ菌は爆破できない。7秒クリアをめざそう！移動は丸スティックまたはWASD、爆破はドクロボタン。</p>
+          <p>赤バイ菌は爆破できる、青バイ菌は爆破できない。<br>7秒クリアをめざそう！<br>移動：丸スティックまたはWASD。爆破：ドクロボタン。</p>
           <a class="play" href="https://unityroom.com/games/baikinexplosion" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">04</span> Memory Breakdown</h3>
-          <p>ピースを持って狙いをつけて投げよう。同じピースを3つくっつけると消えるゲームです。</p>
+          <p>ピースを持って、狙いをつけて投げよう。<br>同じピースを3つくっつけると消えるゲームです。</p>
           <a class="play" href="https://unityroom.com/games/memory_breakdown" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">05</span> MAGIC_TILE</h3>
           <p>空中に魔法陣の足場を作り、ダイヤモンドを集めて進むゲームです。</p>
           <a class="play" href="https://unityroom.com/games/magic_tile" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">06</span> 俺による俺のための俺のミートスープ</h3>
-          <p>たくさんタップして、彼のなめらかなミートスープを作ろう！スマホはタップ、PCはクリックまたはEnterキー。評価は★～★★★★★。</p>
+          <p>たくさんタップして、彼のなめらかなミートスープを作ってあげてください。<br>スマホ：画面タップ。<br>PC：クリックまたはEnterキー。<br>評価：★～★★★★★。</p>
           <a class="play" href="https://unityroom.com/games/my_meatsoup" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">07</span> 末期Dr.オフィーリア</h3>
-          <p>お薬をバイ菌にぶつけてやっつけるプッシャーゲーム。カウント数でバイ菌のうめき声が変わります。</p>
+          <p>お薬をバイ菌にぶつけてやっつけるプッシャーゲーム！<br>カウント数でバイ菌のうめき声が変わります。</p>
           <a class="play" href="https://unityroom.com/games/terminal_dr_ophelia" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">08</span> ライブ配信：３年付き合った彼氏に振られたけど 友達が突撃させてくれるらしい まじありがとう</h3>
-          <p>移動して友達に突撃！心優しい友達に甘えて、愁いを晴らしましょう。</p>
+          <p>移動だけで友達に突撃できます！<br>心優しい友達に甘えて、愁いを晴らしましょう。</p>
           <a class="play" href="https://unityroom.com/games/chargefriends" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">09</span> SPACE BALL</h3>
-          <p>上下キーで玉を避けよう。3回当たるとやり直し！</p>
+          <p>上下キーで玉を避けよう！<br>3回当たるとやり直し。</p>
           <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">10</span> Master of Absurdity（おためし版）</h3>
           <p>ステージがあなたの行動に逆らって動く、理不尽アスレチックゲームです。</p>
           <a class="play" href="https://unityroom.com/games/absurdity" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">11</span> Bubble Hole</h3>
-          <p>バブルを避ける弾幕ゲーム。攻撃手段は突撃。蝶に当たればCLEAR！</p>
+          <p>バブルを避ける弾幕ゲームです。<br>攻撃手段は突撃。<br>蝶に当たればCLEAR！</p>
           <a class="play" href="https://unityroom.com/games/bubble_hole" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">12</span> sky HIT</h3>
           <p>杖をエナジーに当てるだけのゲームです！</p>
           <a class="play" href="https://unityroom.com/games/skyhit" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">13</span> シロクシーロ</h3>
-          <p>白くなりたいゴーストを助けよう！赤は触れるとゲームオーバー、緑と黄色は左クリックで捕獲。黄色を3体捕まえるとシロクシーロを入手できます。</p>
+          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>白くなりたいゴーストを助けよう！赤は触れるとゲームオーバー。緑と黄色は左クリックで捕獲。黄色を3体捕まえるとシロクシーロを入手できます。</p>
           <a class="play" href="https://unityroom.com/games/sirokusiro" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">14</span> 労うトマト</h3>
-          <p>落としそうになるスリルがクセになる！左右キーで青トマトを操り、シーソーを攻略して謎のトマトさんに触れよう！</p>
+          <p>落としそうになるスリルがクセになる！<br>左右キーで青トマトを操り、シーソーを攻略して、謎のトマトさんに触れよう！</p>
           <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
+
         <article class="card">
           <h3><span class="number">15</span> Change Your Ranking</h3>
-          <p>左右キーで人数を選択。1人プレイは上キー、マルチプレイはゲームパッドのAボタンで加速。数字に触れると順位やスピードが変化します。</p>
+          <p>左右キーで人数を選びます。<br>1人プレイは上キー、マルチプレイはゲームパッドのAボタンで加速。<br>数字に触れると順位やスピードが変化します。</p>
           <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
         </article>
       </section>
 
-      <footer>しろまるのゲーム制作ホワイトボード</footer>
+      <footer>しろまるの制作試行錯誤ノート</footer>
     </div>
   </main>
 </body>
