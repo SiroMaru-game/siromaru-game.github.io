@@ -184,6 +184,13 @@
       font-size: .88rem;
     }
 
+    .role {
+      margin: 12px 0;
+      color: #315460;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
     .memo h4 { margin: 8px 0 2px; color: #765b16; }
     .memo p { margin: 4px 0 12px; }
     .memo p:last-child { margin-bottom: 0; }
@@ -244,14 +251,15 @@
 
       <h1>しろまるの<br>制作試行錯誤ノート</h1>
 
-      <section class="profile" aria-label="自己紹介">
+      <section class="profile" aria-label="プロフィール">
         <img class="portrait" src="./しろまる.png" alt="しろまるの自画像">
         <div>
           <h2>プロフィール</h2>
           <p class="name">名前：しろまる</p>
-          <p class="motto">思いつきは自由に、ゲーム作りは真剣に。</p>
-          <p>食欲と好奇心で生きています。</p>
-          <p>学校でゲーム制作を学んでいます。</p>
+          <p>専門学生のプランナー志望です。</p>
+          <p>1年半で15作品を制作。</p>
+          <p>アイデアを考え、実際にゲームとして形にし、試行錯誤を重ねながら制作してきました。</p>
+          <p><strong>目指すプランナー像：</strong><br>プレイヤーに時間を忘れて楽しめる体験を届けたいです。</p>
 
           <div class="tool-tags" aria-label="使用ツール">
             <span>Unity</span>
@@ -262,7 +270,7 @@
           </div>
 
           <div class="links">
-            <a href="https://x.com/shiroround" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://x.com/shiroround" target="_blank" rel="noopener noreferrer">X（連絡先）</a>
             <a href="https://unityroom.com/users/carrot" target="_blank" rel="noopener noreferrer">unityroom①</a>
             <a href="https://unityroom.com/users/v591up6r8zemhaqs7fj0" target="_blank" rel="noopener noreferrer">unityroom②</a>
             <a href="https://siroround.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
@@ -271,10 +279,11 @@
       </section>
 
       <div class="intro">
+        <p>掲載作品はすべて一人で制作しています。</p>
         <p>プログラミングの基礎部分はAI（ChatGPT）を活用し、</p>
         <p>自身は企画や遊び心地の調整に注力しています。</p>
-        <p>これまで1年半で作った全15作品をまとめました。</p>
-        <p>特に見てほしい代表作2作と、これまでの作品を紹介しています。</p>
+        <p>これまで1年半で作った全15作品をまとめた動画と、</p>
+        <p>特に見てほしい代表作2作、これまでの作品を紹介しています。</p>
         <p class="playable">すべてブラウザ上で遊べます！</p>
         <p class="playable">全作品プレイ時間10分以内！</p>
       </div>
@@ -299,13 +308,13 @@
         <div class="facts">
           <span>ジャンル：バランスアクション</span>
           <span>制作期間：80時間</span>
-          <span>担当：企画・UIデザイン・レベルデザイン・実装</span>
           <span>Unity / C# / ibisPaint / GarageBand</span>
         </div>
+        <p class="role">担当：企画・制作・実装</p>
         <p><strong>目指した体験：</strong><br>落とすと悔しい。<br>バランスをとること自体が楽しい体験。</p>
         <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         <div class="memo">
-          <h4>✎ 楽しいところ・企画のこだわり</h4>
+          <h4>✎ 企画・テストプレイからの改善</h4>
           <p><strong>リスクとリターン：</strong><br>落ちそうになるハラハラ感。<br>ギリギリまで傾けて進めた達成感。</p>
           <p><strong>テストプレイからの改善：</strong><br>シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。</p>
           <h4>📌 残っているバグ・今後の研究メモ</h4>
@@ -321,13 +330,13 @@
           <span>ジャンル：カーレース</span>
           <span>制作期間：1週間</span>
           <span>Official 2026 Unity Game Jam 投稿作品</span>
-          <span>担当：レベルデザイン・実装</span>
           <span>Unity / C# / GarageBand</span>
         </div>
+        <p class="role">企画：学校の先生。担当：企画案をもとに制作・実装。</p>
         <p><strong>目指した体験：</strong><br>最後まで順位が予測できない、運試しのような体験。</p>
         <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
         <div class="memo">
-          <h4>✎ 楽しいところ・企画のこだわり</h4>
+          <h4>✎ 企画・テストプレイからの改善</h4>
           <p><strong>リスクとリターン：</strong><br>1位を取ったときの爽快さ。<br>1位を取られたときの悔しさ。</p>
           <p><strong>気持ちよさ：</strong><br>1位を取ったときの加速を、2位・3位より強くしました。</p>
           <p><strong>テストプレイからの改善：</strong><br>数字の回転が速く目押しが難しかったため、コース序盤はゆっくり、終盤は速くなるよう調整しました。</p>
@@ -336,13 +345,15 @@
         </div>
       </article>
 
-      <h2 class="section-title">🗂️ これまでの制作アーカイブ（全15作品）</h2>
+      <h2 class="section-title">🗂️ 主な制作作品（13作品）</h2>
 
-      <section class="archive" aria-label="制作したゲーム一覧">
+      <section class="archive" aria-label="主な制作作品">
         <article class="card">
           <h3><span class="number">01</span> めざせ3776富士ジャンプ</h3>
           <img class="game-image" src="./①.png" alt="めざせ3776富士ジャンプのプレイ画面">
           <p>初めて作ったゲームです。<br>シーソーでジャンプして空を飛び、ワンタップ・ワンクリックで富士山のてっぺんをめざそう！</p>
+          <p><strong>目指した体験：</strong><br>ワンクリックで遊べて、失敗しても成功しても楽しめる体験。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/seesaw_jump" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -350,20 +361,17 @@
           <h3><span class="number">02</span> 絵あわせゲーム ～おじいちゃんと孫の6年間～</h3>
           <img class="game-image" src="./②.png" alt="絵あわせゲームのプレイ画面">
           <p>UnityRoom 1Week Game Jam 投稿作品です。<br>孫に遊ばれるおじいちゃんの6年間を、やさしい絵あわせで楽しめます。</p>
+          <p><strong>目指した体験：</strong><br>神経衰弱にタイミングアクションを組み合わせた体験。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/6years_with_grandpa_and_grandchild" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
-        </article>
-
-        <article class="card">
-          <h3><span class="number">03</span> ばい菌！爆破！！</h3>
-          <img class="game-image" src="./③.png" alt="ばい菌！爆破！！のプレイ画面">
-          <p>赤バイ菌は爆破できる。<br>青バイ菌は爆破できない。<br>7秒クリアをめざそう！<br>移動：丸スティックまたはWASD。<br>爆破：ドクロボタン。</p>
-          <a class="play" href="https://unityroom.com/games/baikinexplosion" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">04</span> Memory Breakdown</h3>
           <img class="game-image" src="./④.png" alt="Memory Breakdownのプレイ画面">
           <p>ピースを持って、狙いをつけて投げよう。<br>同じピースを3つくっつけると消えるゲームです。</p>
+          <p><strong>目指した体験：</strong><br>3D空間で神経衰弱を遊び、「忘れてしまうこと」をエネミーとして表現。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/memory_breakdown" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -371,20 +379,17 @@
           <h3><span class="number">05</span> MAGIC_TILE</h3>
           <img class="game-image" src="./⑤.png" alt="MAGIC_TILEのプレイ画面">
           <p>空中に魔法陣の足場を作り、ダイヤモンドを集めて進むゲームです。</p>
+          <p><strong>目指した体験：</strong><br>空中を移動するときのハラハラ感。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/magic_tile" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
-        </article>
-
-        <article class="card">
-          <h3><span class="number">06</span> 俺による俺のための俺のミートスープ</h3>
-          <img class="game-image" src="./⑥.png" alt="俺による俺のための俺のミートスープのプレイ画面">
-          <p>たくさんタップして、彼のなめらかなミートスープを作ってあげてください。<br>スマホ：画面タップ。<br>PC：クリックまたはEnterキー。<br>評価：★～★★★★★。</p>
-          <a class="play" href="https://unityroom.com/games/my_meatsoup" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">07</span> 末期Dr.オフィーリア</h3>
           <img class="game-image" src="./⑦.png" alt="末期Dr.オフィーリアのプレイ画面">
           <p>お薬をバイ菌にぶつけてやっつけるプッシャーゲーム！<br>カウント数でバイ菌のうめき声が変わります。</p>
+          <p><strong>目指した体験：</strong><br>コイン落としを楽しくするため、下にエネミーを配置。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/terminal_dr_ophelia" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -392,6 +397,8 @@
           <h3><span class="number">08</span> ライブ配信：３年付き合った彼氏に振られたけど 友達が突撃させてくれるらしい まじありがとう</h3>
           <img class="game-image" src="./⑧.png" alt="ライブ配信ゲームのプレイ画面">
           <p>移動だけで友達に突撃できます！<br>心優しい友達に甘えて、愁いを晴らしましょう。</p>
+          <p><strong>目指した体験：</strong><br>移動だけでエネミーを撃破できる楽しさ。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/chargefriends" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -399,6 +406,8 @@
           <h3><span class="number">09</span> SPACE BALL</h3>
           <img class="game-image" src="./⑨.png" alt="SPACE BALLのプレイ画面">
           <p>上下キーで玉を避けよう！<br>3回当たるとやり直し。</p>
+          <p><strong>目指した体験：</strong><br>曲を最後まで聴いてもらえるよう、曲が終わるまで玉を避けるゲームにしました。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -406,6 +415,8 @@
           <h3><span class="number">10</span> Master of Absurdity（おためし版）</h3>
           <img class="game-image" src="./⑩.png" alt="Master of Absurdityのプレイ画面">
           <p>ステージがあなたの行動に逆らって動く、理不尽アスレチックゲームです。</p>
+          <p><strong>目指した体験：</strong><br>予想できない動きをするステージで、理不尽さを楽しむ体験。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/absurdity" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -413,20 +424,26 @@
           <h3><span class="number">11</span> Bubble Hole</h3>
           <img class="game-image" src="./⑪.png" alt="Bubble Holeのプレイ画面">
           <p>バブルを避ける弾幕ゲームです。<br>攻撃手段は突撃。<br>蝶に当たればCLEAR！</p>
+          <p><strong>目指した体験：</strong><br>きれいな弾幕を避ける背徳感。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/bubble_hole" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">12</span> sky HIT</h3>
           <img class="game-image" src="./⑫.png" alt="sky HITのプレイ画面">
-          <p>杖をエナジーに当てるだけのゲームです！</p>
+          <p>杖をエナジーに当てるゲームです。</p>
+          <p><strong>目指した体験：</strong><br>当てるたびに速くなる緊張感。あと一個が当てられない悔しさから、もう一度遊びたくなる体験。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/skyhit" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">13</span> シロクシーロ</h3>
           <img class="game-image" src="./⑬.png" alt="シロクシーロのプレイ画面">
-          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>白くなりたいゴーストを助けよう！<br>赤は触れるとゲームオーバー。緑と黄色は左クリックで捕獲。黄色を3体捕まえるとシロクシーロを入手できます。</p>
+          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>白くなりたいゴーストを助けよう！<br>赤は触れるとゲームオーバー。緑と黄色は左クリックで捕獲。</p>
+          <p><strong>目指した体験：</strong><br>素早くタッチしてゴーストを捕獲する楽しさ。</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/sirokusiro" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -434,6 +451,7 @@
           <h3><span class="number">14</span> 労うトマト</h3>
           <img class="game-image" src="./⑭.png" alt="労うトマトのプレイ画面">
           <p>落としそうになるスリルがクセになる！<br>左右キーで青トマトを操り、シーソーを攻略して、謎のトマトさんに触れよう！</p>
+          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
@@ -441,17 +459,21 @@
           <h3><span class="number">15</span> Change Your Ranking</h3>
           <img class="game-image" src="./⑮.png" alt="Change Your Rankingのプレイ画面">
           <p>左右キーで人数を選びます。<br>1人プレイは上キー、マルチプレイはゲームパッドのAボタンで加速。<br>数字に触れると順位やスピードが変化します。</p>
+          <p class="role">企画：学校の先生。<br>担当：企画案をもとに制作・実装。</p>
           <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
         </article>
       </section>
 
       <div class="bottom-links">
-        <p>しろまるのSNS</p>
-        <a class="play" href="https://x.com/shiroround" target="_blank" rel="noopener noreferrer">Xを見に行く</a>
+        <p>連絡先</p>
+        <a class="play" href="https://x.com/shiroround" target="_blank" rel="noopener noreferrer">Xで連絡する</a>
       </div>
 
       <footer>しろまるの制作試行錯誤ノート</footer>
     </div>
+  </main>
+</body>
+</html>
   </main>
 </body>
 </html>
