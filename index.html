@@ -4,25 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>しろまるの制作試行錯誤ノート</title>
+
   <style>
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 24px 12px;
-      color: #27343a;
-      background: #d6dfe2;
+      color: #28373d;
+      background: #dce3e5;
       font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
       line-height: 1.8;
     }
 
-    a { color: #075d7d; overflow-wrap: anywhere; }
+    a {
+      color: #075d7d;
+      overflow-wrap: anywhere;
+    }
 
     .notebook {
-      width: min(1000px, 100%);
+      width: min(1040px, 100%);
       margin: auto;
       padding: clamp(20px, 5vw, 52px);
-      background-color: #fffef8;
+      background-color: #fffef9;
       background-image: radial-gradient(circle, #cbd3d5 0 5px, transparent 6px);
       background-size: 26px 44px;
       background-repeat: repeat-y;
@@ -32,7 +36,9 @@
       box-shadow: 0 12px 0 #8e9da3, 0 28px 60px #25323830;
     }
 
-    .content { padding-left: clamp(14px, 4vw, 42px); }
+    .content {
+      padding-left: clamp(18px, 4vw, 42px);
+    }
 
     .topline {
       display: flex;
@@ -46,7 +52,7 @@
     }
 
     h1 {
-      margin: 24px 0;
+      margin: 26px 0;
       color: #173f53;
       font-size: clamp(1.8rem, 5vw, 3rem);
       line-height: 1.35;
@@ -74,10 +80,21 @@
       object-fit: contain;
     }
 
-    .profile h2 { margin: 0 0 8px; font-size: 1.2rem; }
-    .profile p { margin: 4px 0; }
-    .name { color: #173f53; font-size: 1.4rem; font-weight: 800; }
-    .tool-tags, .links {
+    .profile h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .profile p { margin: 5px 0; }
+
+    .name {
+      color: #173f53;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .tool-tags,
+    .links {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -94,9 +111,10 @@
       font-weight: 700;
     }
 
-    .links a, .play {
+    .links a,
+    .play {
       display: inline-block;
-      padding: 7px 12px;
+      padding: 8px 13px;
       border-radius: 8px;
       color: white;
       background: #28738d;
@@ -104,11 +122,14 @@
       text-decoration: none;
     }
 
-    .links a:hover, .play:hover { background: #174e63; }
+    .links a:hover,
+    .play:hover {
+      background: #174e63;
+    }
 
-    .intro, .memo {
-      margin: 22px 0;
-      padding: 16px 20px;
+    .intro {
+      margin: 24px 0 34px;
+      padding: 18px 22px;
       background: #fff5c9;
       border-left: 6px solid #e2b942;
       border-radius: 6px 12px 12px 6px;
@@ -118,20 +139,136 @@
     .intro p:last-child { margin-bottom: 0; }
 
     .playable {
-      margin-top: 14px !important;
-      color: #c2410c;
-      font-size: 1.18rem;
+      margin-top: 12px !important;
+      color: #bd4818;
+      font-size: 1.15rem;
       font-weight: 800;
     }
 
     .section-title {
       margin: 42px 0 18px;
-      padding: 8px 14px;
+      padding: 9px 14px;
       color: #173f53;
       background: #dceff4;
       border-left: 7px solid #4386a0;
       font-size: clamp(1.3rem, 4vw, 1.8rem);
+      line-height: 1.45;
     }
+
+    .pickup {
+      margin: 18px 0 26px;
+      padding: clamp(18px, 4vw, 30px);
+      background: white;
+      border: 2px solid #b7c7cc;
+      border-radius: 16px;
+      box-shadow: 4px 5px 0 #e0e7e9;
+    }
+
+    .pickup-label {
+      color: #a34343;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .pickup h3 {
+      margin: 3px 0 12px;
+      color: #173f53;
+      font-size: 1.6rem;
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 12px 0 16px;
+    }
+
+    .facts span {
+      padding: 4px 10px;
+      background: #f1f6f7;
+      border: 1px solid #c3d0d4;
+      border-radius: 999px;
+      font-size: .88rem;
+    }
+
+    .role {
+      margin: 12px 0;
+      color: #315460;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .plan-help {
+      margin: 8px 0 12px;
+      color: #526873;
+      font-size: .9rem;
+    }
+
+    .plan-gallery {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 8px 4px 18px;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .plan-page {
+      flex: 0 0 min(82%, 620px);
+      margin: 0;
+      scroll-snap-align: start;
+    }
+
+    .plan-page a {
+      display: block;
+      padding: 7px;
+      background: #f0f4f4;
+      border: 1px solid #bdcbd0;
+      border-radius: 10px;
+    }
+
+    .plan-page img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .plan-page figcaption {
+      margin-top: 5px;
+      color: #526873;
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    .plan-gallery::-webkit-scrollbar { height: 10px; }
+
+    .plan-gallery::-webkit-scrollbar-thumb {
+      background: #9eb4bf;
+      border-radius: 999px;
+    }
+
+    .plan-gallery::-webkit-scrollbar-track {
+      background: #edf1f2;
+      border-radius: 999px;
+    }
+
+    .memo {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: #fff8dc;
+      border-left: 5px solid #e2b942;
+      border-radius: 6px 12px 12px 6px;
+    }
+
+    .memo h4 {
+      margin: 8px 0 3px;
+      color: #765b16;
+    }
+
+    .memo p { margin: 5px 0 14px; }
+    .memo p:last-child { margin-bottom: 0; }
 
     .video {
       display: block;
@@ -143,70 +280,49 @@
       background: #17262d;
     }
 
-    .pickup, .card {
+    .archive {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
       min-width: 0;
-      margin: 18px 0;
-      padding: clamp(16px, 4vw, 28px);
+      padding: 18px;
       background: white;
       border: 2px solid #b7c7cc;
       border-radius: 15px;
       box-shadow: 4px 5px 0 #e0e7e9;
     }
 
-    .pickup-label, .number { color: #a34343; font-weight: 800; }
+    .card h3 {
+      margin: 0 0 10px;
+      color: #17465d;
+      font-size: 1.08rem;
+      line-height: 1.5;
+    }
 
-    .pickup h3 {
-      margin: 2px 0 12px;
-      color: #173f53;
-      font-size: 1.55rem;
+    .number {
+      color: #a34343;
+      font-weight: 800;
     }
 
     .game-image {
       display: block;
       width: 100%;
-      max-height: 420px;
-      margin: 14px 0;
+      max-height: 260px;
+      margin: 12px 0;
       border: 1px solid #c3d0d4;
       border-radius: 10px;
       background: #eef2f3;
       object-fit: contain;
     }
 
-    .facts { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0; }
-
-    .facts span {
-      padding: 3px 10px;
-      background: #f1f6f7;
-      border: 1px solid #c3d0d4;
-      border-radius: 999px;
-      font-size: .88rem;
-    }
-
-    .role {
-      margin: 12px 0;
-      color: #315460;
-      font-size: .92rem;
-      font-weight: 700;
-    }
-
-    .memo h4 { margin: 8px 0 2px; color: #765b16; }
-    .memo p { margin: 4px 0 12px; }
-    .memo p:last-child { margin-bottom: 0; }
-
-    .archive {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .card { margin: 0; padding: 18px; }
-    .card h3 { margin: 0 0 8px; color: #17465d; font-size: 1.05rem; }
-    .card p { margin: 6px 0 14px; }
-    .card .game-image { max-height: 260px; }
-    .play { text-align: center; }
+    .card p { margin: 7px 0 12px; }
+    .card .play { margin-top: 4px; }
 
     .bottom-links {
-      margin-top: 28px;
+      margin-top: 30px;
       padding: 18px;
       text-align: center;
       background: #f3f8fa;
@@ -214,7 +330,10 @@
       border-radius: 14px;
     }
 
-    .bottom-links p { margin: 0 0 10px; font-weight: 700; }
+    .bottom-links p {
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
 
     footer {
       margin-top: 24px;
@@ -227,18 +346,32 @@
 
     @media (max-width: 640px) {
       body { padding: 12px 7px; }
-      .notebook { padding: 18px 10px; border-width: 7px; border-radius: 16px; }
+
+      .notebook {
+        padding: 18px 10px;
+        border-width: 7px;
+        border-radius: 16px;
+      }
+
       .content { padding-left: 34px; }
       .topline { font-size: .65rem; letter-spacing: 0; }
-      .profile { flex-direction: column; padding: 18px 12px; text-align: center; }
+
+      .profile {
+        flex-direction: column;
+        padding: 18px 12px;
+        text-align: center;
+      }
+
       .portrait { width: 116px; height: 116px; }
       .tool-tags, .links { justify-content: center; }
       .archive { grid-template-columns: 1fr; }
       .facts span { font-size: .8rem; }
+      .plan-page { flex-basis: 88%; }
       .play { display: block; }
     }
   </style>
 </head>
+
 <body>
   <main class="notebook">
     <div class="content">
@@ -251,13 +384,17 @@
 
       <section class="profile" aria-label="プロフィール">
         <img class="portrait" src="./しろまる.png" alt="しろまるの自画像">
+
         <div>
           <h2>プロフィール</h2>
           <p class="name">名前：しろまる</p>
           <p>専門学生のプランナー志望です。</p>
           <p>1年半で15作品を制作。</p>
-          <p>アイデアを考え、実際にゲームとして形にし、試行錯誤を重ねながら制作してきました。</p>
-          <p><strong>目指すプランナー像：</strong><br>プレイヤーに時間を忘れて楽しめる体験を届けたいです。</p>
+          <p>アイデアを考え、ゲームとして形にし、試行錯誤を重ねながら制作してきました。</p>
+          <p>
+            <strong>目指すプランナー像：</strong><br>
+            プレイヤーに時間を忘れて楽しめる体験を届けたいです。
+          </p>
 
           <div class="tool-tags" aria-label="使用ツール">
             <span>Unity</span>
@@ -276,47 +413,86 @@
         </div>
       </section>
 
-      <div class="intro">
+      <section class="intro" aria-label="制作について">
         <p>掲載作品はすべて一人で制作しています。</p>
-        <p>プログラミングの基礎部分はAI（ChatGPT）を活用し、</p>
-        <p>自身は企画や遊び心地の調整に注力しています。</p>
-        <p>これまで1年半で作った全15作品をまとめた動画と、</p>
-        <p>特に見てほしい代表作2作、これまでの作品を紹介しています。</p>
+        <p>企画のアイデア出しや整理、プログラミングにChatGPTを活用しています。</p>
+        <p>UIは自分で制作するか、素材を使用しています。</p>
         <p class="playable">すべてブラウザ上で遊べます！</p>
         <p class="playable">全作品プレイ時間10分以内！</p>
-      </div>
-
-      <h2 class="section-title">🎞️ 15作品まとめ動画</h2>
-      <iframe
-        class="video"
-        src="https://www.youtube-nocookie.com/embed/YxCVEY0uORY"
-        title="しろまるのゲーム15作品まとめ"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      </section>
 
       <h2 class="section-title">👑 特に見てほしい代表作</h2>
 
       <article class="pickup">
         <span class="pickup-label">PICKUP #01</span>
         <h3>労うトマト</h3>
-        <img class="game-image" src="./⑭.png" alt="労うトマトのプレイ画面">
+
         <div class="facts">
-          <span>ジャンル：バランスアクション</span>
-          <span>制作期間：80時間</span>
+          <span>ジャンル：バランスゲーム</span>
+          <span>制作期間：1か月半</span>
+          <span>担当：企画・制作・実装</span>
           <span>Unity / C# / ibisPaint / GarageBand</span>
         </div>
-        <p class="role">担当：企画・制作・実装</p>
-        <p><strong>目指した体験：</strong><br>落とすと悔しい。<br>バランスをとること自体が楽しい体験。</p>
+
+        <p>
+          <strong>目指した体験：</strong><br>
+          落とすと悔しい。<br>
+          バランスをとること自体が楽しい体験。
+        </p>
+
+        <p class="plan-help">企画書は横にスクロールできます。画像を押すと大きく表示します。</p>
+
+        <div class="plan-gallery" aria-label="労うトマトの企画書">
+          <figure class="plan-page">
+            <a href="./tomato-plan-01.png" target="_blank" rel="noopener noreferrer">
+              <img src="./tomato-plan-01.png" alt="労うトマト企画書 1ページ目" loading="lazy">
+            </a>
+            <figcaption>企画書 1 / 5</figcaption>
+          </figure>
+
+          <figure class="plan-page">
+            <a href="./tomato-plan-02.png" target="_blank" rel="noopener noreferrer">
+              <img src="./tomato-plan-02.png" alt="労うトマト企画書 2ページ目" loading="lazy">
+            </a>
+            <figcaption>企画書 2 / 5</figcaption>
+          </figure>
+
+          <figure class="plan-page">
+            <a href="./tomato-plan-03.png" target="_blank" rel="noopener noreferrer">
+              <img src="./tomato-plan-03.png" alt="労うトマト企画書 3ページ目" loading="lazy">
+            </a>
+            <figcaption>企画書 3 / 5</figcaption>
+          </figure>
+
+          <figure class="plan-page">
+            <a href="./tomato-plan-04.png" target="_blank" rel="noopener noreferrer">
+              <img src="./tomato-plan-04.png" alt="労うトマト企画書 4ページ目" loading="lazy">
+            </a>
+            <figcaption>企画書 4 / 5</figcaption>
+          </figure>
+
+          <figure class="plan-page">
+            <a href="./tomato-plan-05.png" target="_blank" rel="noopener noreferrer">
+              <img src="./tomato-plan-05.png" alt="労うトマト企画書 5ページ目" loading="lazy">
+            </a>
+            <figcaption>企画書 5 / 5</figcaption>
+          </figure>
+        </div>
+
         <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
-        <a class="play" href="https://github.com/SiroMaru-game/siromaru-game.github.io/blob/main/%E4%BC%81%E7%94%BB%E書_%E5%8A%B4%E3%81%86%E3%83%88%E3%83%9E%E3%83%88.pdf" target="_blank" rel="noopener noreferrer">📄 企画書を見る（PDF）</a>
 
         <div class="memo">
           <h4>✎ 企画・テストプレイからの改善</h4>
-          <p><strong>リスクとリターン：</strong><br>落ちそうになるハラハラ感。<br>ギリギリまで傾けて進めた達成感。</p>
-          <p><strong>テストプレイからの改善：</strong><br>シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。</p>
+          <p>
+            <strong>リスクとリターン：</strong><br>
+            落ちそうになるハラハラ感。<br>
+            ギリギリまで傾けて進めた達成感。
+          </p>
+          <p>
+            <strong>テストプレイからの改善：</strong><br>
+            シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。<br>
+            Playerキャラが簡単に落ちなくなり、バランスを調整するというゲームの核が際立ちました。
+          </p>
           <h4>📌 残っているバグ・今後の研究メモ</h4>
           <p>方向転換でプレイヤーが滑って見えるため、回転速度を合わせたいと考えています。</p>
         </div>
@@ -324,142 +500,187 @@
 
       <article class="pickup">
         <span class="pickup-label">PICKUP #02</span>
-        <h3>Change Your Ranking</h3>
-        <img class="game-image" src="./⑮.png" alt="Change Your Rankingのプレイ画面">
+        <h3>SPACE BALL</h3>
+
         <div class="facts">
-          <span>ジャンル：カーレース</span>
-          <span>制作期間：1週間</span>
-          <span>Official 2026 Unity Game Jam 投稿作品</span>
-          <span>Unity / C# / GarageBand</span>
+          <span>ジャンル：弾避けアクションゲーム</span>
+          <span>制作期間：2週間</span>
+          <span>担当：企画・制作・実装</span>
+          <span>Unity / C#</span>
         </div>
-        <p class="role">企画：学校の先生。<br>担当：企画案をもとに制作・実装。</p>
-        <p><strong>目指した体験：</strong><br>最後まで順位が予測できない、運試しのような体験。</p>
-        <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
+
+        <p>
+          <strong>目指した体験：</strong><br>
+          曲を最後まで聴いてもらえるよう、曲が終わるまで玉を避けるゲームにしました。
+        </p>
+
+        <p class="plan-help">企画書を押すと大きく表示します。</p>
+
+        <div class="plan-gallery" aria-label="SPACE BALLの企画書">
+          <figure class="plan-page">
+            <a href="./space-ball-plan-01.png" target="_blank" rel="noopener noreferrer">
+              <img src="./space-ball-plan-01.png" alt="SPACE BALL企画書" loading="lazy">
+            </a>
+            <figcaption>企画書</figcaption>
+          </figure>
+        </div>
+
+        <p class="role">企画書の構成・文章整理にChatGPTを活用。企画内容とゲーム仕様は自身で検討・調整。</p>
+
+        <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
+
         <div class="memo">
-          <h4>✎ 企画・テストプレイからの改善</h4>
-          <p><strong>リスクとリターン：</strong><br>1位を取ったときの爽快さ。<br>1位を取られたときの悔しさ。</p>
-          <p><strong>気持ちよさ：</strong><br>1位を取ったときの加速を、2位・3位より強くしました。</p>
-          <p><strong>テストプレイからの改善：</strong><br>数字の回転が速く目押しが難しかったため、コース序盤はゆっくり、終盤は速くなるよう調整しました。</p>
-          <h4>📌 残っているバグ・今後の研究メモ</h4>
-          <p>車の走行音が大きく聞こえるため、移動入力した瞬間だけエンジン音を入れる方法を考えています。</p>
+          <h4>✎ テストプレイからの改善</h4>
+          <p>
+            玉を円形から楕円形に変更しました。<br>
+            回転しながら飛んでくる玉は、縦向きになったときに弾の間を通りやすくなると考えました。<br>
+            変更後は避けやすくなり、狙った遊びやすさにつながりました。
+          </p>
+
+          <h4>📌 残っている課題・今後の研究メモ</h4>
+          <p>
+            音楽を目立たせるため、当たったときは音楽を止める演出にしました。<br>
+            音楽を邪魔せずに衝突を伝えるエフェクトも加えると、より分かりやすくできそうです。
+          </p>
+          <p>
+            3ステージ構成ですが、ステージ3がステージ2より簡単に感じられます。<br>
+            ステージ3は曲の盛り上がりに合わせて難しくする狙いでしたが、難易度の上昇が緩やかになりました。<br>
+            曲の展開と障害物の量や速さを合わせ、意図した難易度カーブになるよう調整したいです。
+          </p>
         </div>
       </article>
 
-      <h2 class="section-title">🗂️ 主な制作作品（13作品）</h2>
+      <h2 class="section-title">過去1年半の制作実績</h2>
+      <h3>制作した15作品の紹介動画</h3>
 
-      <section class="archive" aria-label="主な制作作品">
+      <iframe
+        class="video"
+        src="https://www.youtube-nocookie.com/embed/YxCVEY0uORY"
+        title="しろまるが制作した15作品の紹介動画"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+      <h2 class="section-title">掲載作品（13作品）</h2>
+
+      <section class="archive" aria-label="掲載作品一覧">
         <article class="card">
           <h3><span class="number">01</span> めざせ3776富士ジャンプ</h3>
-          <img class="game-image" src="./①.png" alt="めざせ3776富士ジャンプのプレイ画面">
-          <p>初めて作ったゲームです。<br>シーソーでジャンプして空を飛び、ワンタップ・ワンクリックで富士山のてっぺんをめざそう！</p>
+          <img class="game-image" src="./①.png" alt="めざせ3776富士ジャンプのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>ワンクリックジャンプゲーム</p>
+          <p><strong>制作期間：</strong>2週間半</p>
           <p><strong>目指した体験：</strong><br>ワンクリックで遊べて、失敗しても成功しても楽しめる体験。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/seesaw_jump" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">02</span> 絵あわせゲーム ～おじいちゃんと孫の6年間～</h3>
-          <img class="game-image" src="./②.png" alt="絵あわせゲームのプレイ画面">
-          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>孫に遊ばれるおじいちゃんの6年間を、やさしい絵あわせで楽しめます。</p>
+          <img class="game-image" src="./②.png" alt="絵あわせゲームのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>絵あわせゲーム</p>
+          <p><strong>制作期間：</strong>1週間</p>
           <p><strong>目指した体験：</strong><br>神経衰弱にタイミングアクションを組み合わせた体験。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/6years_with_grandpa_and_grandchild" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">03</span> Memory Breakdown</h3>
-          <img class="game-image" src="./④.png" alt="Memory Breakdownのプレイ画面">
-          <p>ピースを持って、狙いをつけて投げよう。<br>同じピースを3つくっつけると消えるゲームです。</p>
+          <img class="game-image" src="./④.png" alt="Memory Breakdownのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>パズルアクションゲーム</p>
+          <p><strong>制作期間：</strong>1か月</p>
           <p><strong>目指した体験：</strong><br>3D空間で神経衰弱を遊び、「忘れてしまうこと」をエネミーとして表現。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/memory_breakdown" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">04</span> MAGIC_TILE</h3>
-          <img class="game-image" src="./⑤.png" alt="MAGIC_TILEのプレイ画面">
-          <p>空中に魔法陣の足場を作り、ダイヤモンドを集めて進むゲームです。</p>
+          <img class="game-image" src="./⑤.png" alt="MAGIC_TILEのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>空中移動アクションゲーム</p>
+          <p><strong>制作期間：</strong>2か月</p>
           <p><strong>目指した体験：</strong><br>空中を移動するときのハラハラ感。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/magic_tile" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">05</span> 末期Dr.オフィーリア</h3>
-          <img class="game-image" src="./⑦.png" alt="末期Dr.オフィーリアのプレイ画面">
-          <p>お薬をバイ菌にぶつけてやっつけるプッシャーゲーム！<br>カウント数でバイ菌のうめき声が変わります。</p>
-          <p><strong>目指した体験：</strong><br>コイン落としを楽しくするため、下にエネミーを配置。</p>
-          <p class="role">担当：企画・制作・実装</p>
+          <img class="game-image" src="./⑦.png" alt="末期Dr.オフィーリアのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>プッシャーゲーム</p>
+          <p><strong>制作期間：</strong>2週間</p>
+          <p><strong>目指した体験：</strong><br>コイン落としを楽しくするため、落下先にエネミーを配置。</p>
           <a class="play" href="https://unityroom.com/games/terminal_dr_ophelia" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">06</span> ライブ配信：３年付き合った彼氏に振られたけど 友達が突撃させてくれるらしい まじありがとう</h3>
-          <img class="game-image" src="./⑧.png" alt="ライブ配信ゲームのプレイ画面">
-          <p>移動だけで友達に突撃できます！<br>心優しい友達に甘えて、愁いを晴らしましょう。</p>
+          <img class="game-image" src="./⑧.png" alt="ライブ配信ゲームのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>突撃アクションゲーム</p>
+          <p><strong>制作期間：</strong>5日</p>
           <p><strong>目指した体験：</strong><br>移動だけでエネミーを撃破できる楽しさ。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/chargefriends" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">07</span> SPACE BALL</h3>
-          <img class="game-image" src="./⑨.png" alt="SPACE BALLのプレイ画面">
-          <p>上下キーで玉を避けよう！<br>3回当たるとやり直し。</p>
+          <img class="game-image" src="./⑨.png" alt="SPACE BALLのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>弾避けアクションゲーム</p>
+          <p><strong>制作期間：</strong>2週間</p>
           <p><strong>目指した体験：</strong><br>曲を最後まで聴いてもらえるよう、曲が終わるまで玉を避けるゲームにしました。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">08</span> Master of Absurdity（おためし版）</h3>
-          <img class="game-image" src="./⑩.png" alt="Master of Absurdityのプレイ画面">
-          <p>ステージがあなたの行動に逆らって動く、理不尽アスレチックゲームです。</p>
+          <img class="game-image" src="./⑩.png" alt="Master of Absurdityのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>理不尽ステージアクションゲーム</p>
+          <p><strong>制作期間：</strong>3週間</p>
           <p><strong>目指した体験：</strong><br>予想できない動きをするステージで、理不尽さを楽しむ体験。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/absurdity" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">09</span> Bubble Hole</h3>
-          <img class="game-image" src="./⑪.png" alt="Bubble Holeのプレイ画面">
-          <p>バブルを避ける弾幕ゲームです。<br>攻撃手段は突撃。<br>蝶に当たればCLEAR！</p>
+          <img class="game-image" src="./⑪.png" alt="Bubble Holeのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>弾避けアクションゲーム</p>
+          <p><strong>制作期間：</strong>2週間</p>
           <p><strong>目指した体験：</strong><br>きれいな弾幕を避ける背徳感。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/bubble_hole" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">10</span> sky HIT</h3>
-          <img class="game-image" src="./⑫.png" alt="sky HITのプレイ画面">
-          <p>杖をエナジーに当てるゲームです。</p>
-          <p><strong>目指した体験：</strong><br>当てるたびに速くなる緊張感。あともう一個が当てられない悔しさから、もう一度遊びたくなる体験。</p>
-          <p class="role">担当：企画・制作・実装</p>
+          <img class="game-image" src="./⑫.png" alt="sky HITのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>スピードタッチゲーム</p>
+          <p><strong>制作期間：</strong>1週間</p>
+          <p><strong>目指した体験：</strong><br>当てるたびに速くなる緊張感。「あともう一個だった」という悔しさから、もう一度遊びたくなる体験。</p>
           <a class="play" href="https://unityroom.com/games/skyhit" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">11</span> シロクシーロ</h3>
-          <img class="game-image" src="./⑬.png" alt="シロクシーロのプレイ画面">
-          <p>UnityRoom 1Week Game Jam 投稿作品です。<br>白くなりたいゴーストを助けよう！<br>赤は触れるとゲームオーバー。緑と黄色は左クリックで捕獲。</p>
+          <img class="game-image" src="./⑬.png" alt="シロクシーロのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>状態変化エネミー捕獲ゲーム</p>
+          <p><strong>制作期間：</strong>1週間</p>
           <p><strong>目指した体験：</strong><br>素早くタッチしてゴーストを捕獲する楽しさ。</p>
-          <p class="role">担当：企画・制作・実装</p>
           <a class="play" href="https://unityroom.com/games/sirokusiro" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">12</span> 労うトマト</h3>
-          <img class="game-image" src="./⑭.png" alt="労うトマトのプレイ画面">
-          <p>落としそうになるスリルがクセになる！<br>左右キーで青トマトを操り、シーソーを攻略して、謎のトマトさんに触れよう！</p>
-          <p class="role">担当：企画・制作・実装</p>
+          <img class="game-image" src="./⑭.png" alt="労うトマトのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>バランスゲーム</p>
+          <p><strong>制作期間：</strong>1か月半</p>
+          <p><strong>目指した体験：</strong><br>落とすと悔しい。バランスをとること自体が楽しい体験。</p>
           <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
         </article>
 
         <article class="card">
           <h3><span class="number">13</span> Change Your Ranking</h3>
-          <img class="game-image" src="./⑮.png" alt="Change Your Rankingのプレイ画面">
-          <p>左右キーで人数を選びます。<br>1人プレイは上キー、マルチプレイはゲームパッドのAボタンで加速。<br>数字に触れると順位やスピードが変化します。</p>
-          <p class="role">企画：学校の先生。<br>担当：企画案をもとに制作・実装。</p>
+          <img class="game-image" src="./⑮.png" alt="Change Your Rankingのプレイ画面" loading="lazy">
+          <p><strong>ジャンル：</strong>チェンジランキングカーレースゲーム</p>
+          <p><strong>制作期間：</strong>1週間</p>
+          <p><strong>目指した体験：</strong><br>最後まで順位が予測できない、運試しのような体験。</p>
+          <p><strong>企画：</strong><br>学校の先生の原案をもとに、順位に関係なく数字に当たるルールへ変更し、順位が入れ替わる機会を増やしました。</p>
           <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
         </article>
       </section>
@@ -472,7 +693,5 @@
       <footer>しろまるの制作試行錯誤ノート</footer>
     </div>
   </main>
-</body>
-</html>
 </body>
 </html>
