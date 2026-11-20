@@ -1,2 +1,6 @@
-# siromaru-game.github.io
-Personal game development portfolio and archive.
+# しろまるの制作ノート
+
+ゲーム制作を学ぶ専門学生・しろまるのポートフォリオです。
+これまでに制作したゲームや、企画・制作の試行錯誤を紹介しています。
+
+公開サイト：https://siromaru-game.github.io/
