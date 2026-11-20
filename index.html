@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>しろまるの制作ノート</title>
+  <title>しろまるの制作試行錯誤ノート</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -17,10 +17,7 @@
       line-height: 1.8;
     }
 
-    a {
-      color: #075d7d;
-      overflow-wrap: anywhere;
-    }
+    a { color: #075d7d; overflow-wrap: anywhere; }
 
     .notebook {
       width: min(1040px, 100%);
@@ -36,9 +33,7 @@
       box-shadow: 0 12px 0 #8e9da3, 0 28px 60px #25323830;
     }
 
-    .content {
-      padding-left: clamp(18px, 4vw, 42px);
-    }
+    .content { padding-left: clamp(18px, 4vw, 42px); }
 
     .topline {
       display: flex;
@@ -80,39 +75,34 @@
       object-fit: contain;
     }
 
-    .profile h2 {
-      margin: 0 0 8px;
-      font-size: 1.2rem;
-    }
-
+    .profile h2 { margin: 0 0 8px; font-size: 1.2rem; }
     .profile p { margin: 5px 0; }
+    .name { color: #173f53; font-size: 1.4rem; font-weight: 800; }
 
-    .name {
-      color: #173f53;
-      font-size: 1.4rem;
-      font-weight: 800;
+    .skill-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 14px;
     }
 
-    .tool-tags,
+    .skill-row {
+      padding: 8px 11px;
+      background: #e8f2f4;
+      border: 1px solid #c3d6db;
+      border-radius: 9px;
+      font-size: .91rem;
+    }
+
+    .skill-row strong { color: #174b60; }
+
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
-    .tool-tags span {
-      padding: 4px 10px;
-      color: #315460;
-      background: #e1f0f2;
-      border: 1px solid #a9c7ce;
-      border-radius: 999px;
-      font-size: .88rem;
-      font-weight: 700;
-    }
-
-    .links a,
-    .play {
+    .links a, .play {
       display: inline-block;
       padding: 8px 13px;
       border-radius: 8px;
@@ -122,10 +112,7 @@
       text-decoration: none;
     }
 
-    .links a:hover,
-    .play:hover {
-      background: #174e63;
-    }
+    .links a:hover, .play:hover { background: #174e63; }
 
     .intro {
       margin: 24px 0 34px;
@@ -243,12 +230,10 @@
     }
 
     .plan-gallery::-webkit-scrollbar { height: 10px; }
-
     .plan-gallery::-webkit-scrollbar-thumb {
       background: #9eb4bf;
       border-radius: 999px;
     }
-
     .plan-gallery::-webkit-scrollbar-track {
       background: #edf1f2;
       border-radius: 999px;
@@ -262,11 +247,7 @@
       border-radius: 6px 12px 12px 6px;
     }
 
-    .memo h4 {
-      margin: 8px 0 3px;
-      color: #765b16;
-    }
-
+    .memo h4 { margin: 8px 0 3px; color: #765b16; }
     .memo p { margin: 5px 0 14px; }
     .memo p:last-child { margin-bottom: 0; }
 
@@ -302,10 +283,7 @@
       line-height: 1.5;
     }
 
-    .number {
-      color: #a34343;
-      font-weight: 800;
-    }
+    .number { color: #a34343; font-weight: 800; }
 
     .game-image {
       display: block;
@@ -321,6 +299,39 @@
     .card p { margin: 7px 0 12px; }
     .card .play { margin-top: 4px; }
 
+    .button-examples {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .button-card {
+      padding: 18px;
+      background: white;
+      border: 2px solid #b7c7cc;
+      border-radius: 15px;
+      box-shadow: 4px 5px 0 #e0e7e9;
+    }
+
+    .button-card h3 {
+      margin: 0 0 8px;
+      color: #17465d;
+      font-size: 1.05rem;
+    }
+
+    .button-card img {
+      display: block;
+      width: 100%;
+      max-height: 260px;
+      margin: 12px 0;
+      border: 1px solid #c3d0d4;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #eef2f3;
+    }
+
+    .button-card p { margin: 6px 0; }
+
     .bottom-links {
       margin-top: 30px;
       padding: 18px;
@@ -330,10 +341,7 @@
       border-radius: 14px;
     }
 
-    .bottom-links p {
-      margin: 0 0 10px;
-      font-weight: 700;
-    }
+    .bottom-links p { margin: 0 0 10px; font-weight: 700; }
 
     footer {
       margin-top: 24px;
@@ -363,8 +371,8 @@
       }
 
       .portrait { width: 116px; height: 116px; }
-      .tool-tags, .links { justify-content: center; }
-      .archive { grid-template-columns: 1fr; }
+      .links { justify-content: center; }
+      .archive, .button-examples { grid-template-columns: 1fr; }
       .facts span { font-size: .8rem; }
       .plan-page { flex-basis: 88%; }
       .play { display: block; }
@@ -380,7 +388,7 @@
         <span>制作試行錯誤ノート</span>
       </div>
 
-      <h1>しろまるの<br>制作ノート</h1>
+      <h1>しろまるの<br>制作試行錯誤ノート</h1>
 
       <section class="profile" aria-label="プロフィール">
         <img class="portrait" src="./しろまる.png" alt="しろまるの自画像">
@@ -396,12 +404,15 @@
             プレイヤーに時間を忘れて楽しめる体験を届けたいです。
           </p>
 
-          <div class="tool-tags" aria-label="使用ツール">
-            <span>Unity</span>
-            <span>C#</span>
-            <span>GitHub</span>
-            <span>GarageBand</span>
-            <span>ibisPaint</span>
+          <div class="skill-list" aria-label="スキルと使用ツール">
+            <div class="skill-row"><strong>企画・ゲームデザイン：</strong>アイデア出し、ルール設計、遊び心地の調整</div>
+            <div class="skill-row"><strong>企画書・資料作成：</strong>PowerPoint</div>
+            <div class="skill-row"><strong>ゲーム制作：</strong>Unity</div>
+            <div class="skill-row"><strong>音楽制作：</strong>Medly、GarageBand</div>
+            <div class="skill-row"><strong>画像制作：</strong>ibisPaint</div>
+            <div class="skill-row"><strong>3Dモデル制作：</strong>Maya（SPACE BALLではなくSky HITの杖モデル）</div>
+            <div class="skill-row"><strong>投稿先：</strong>unityroom、itch.io（1作品）</div>
+            <div class="skill-row"><strong>授業で学習：</strong>Photoshop（基礎操作）</div>
           </div>
 
           <div class="links">
@@ -430,9 +441,10 @@
         <div class="facts">
           <span>ジャンル：バランスゲーム</span>
           <span>制作期間：1か月半</span>
-          <span>担当：企画・制作・実装</span>
           <span>Unity / C# / ibisPaint / GarageBand</span>
         </div>
+
+        <p class="role">担当：企画・制作・実装</p>
 
         <p>
           <strong>目指した体験：</strong><br>
@@ -449,28 +461,24 @@
             </a>
             <figcaption>企画書 1 / 5</figcaption>
           </figure>
-
           <figure class="plan-page">
             <a href="./tomato-plan-02.png" target="_blank" rel="noopener noreferrer">
               <img src="./tomato-plan-02.png" alt="労うトマト企画書 2ページ目" loading="lazy">
             </a>
             <figcaption>企画書 2 / 5</figcaption>
           </figure>
-
           <figure class="plan-page">
             <a href="./tomato-plan-03.png" target="_blank" rel="noopener noreferrer">
               <img src="./tomato-plan-03.png" alt="労うトマト企画書 3ページ目" loading="lazy">
             </a>
             <figcaption>企画書 3 / 5</figcaption>
           </figure>
-
           <figure class="plan-page">
             <a href="./tomato-plan-04.png" target="_blank" rel="noopener noreferrer">
               <img src="./tomato-plan-04.png" alt="労うトマト企画書 4ページ目" loading="lazy">
             </a>
             <figcaption>企画書 4 / 5</figcaption>
           </figure>
-
           <figure class="plan-page">
             <a href="./tomato-plan-05.png" target="_blank" rel="noopener noreferrer">
               <img src="./tomato-plan-05.png" alt="労うトマト企画書 5ページ目" loading="lazy">
@@ -482,14 +490,8 @@
         <a class="play" href="https://unityroom.com/games/negirautomato" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
 
         <div class="memo">
-          <h4>✎ 企画・テストプレイからの改善</h4>
+          <h4>✎ テストプレイからの改善</h4>
           <p>
-            <strong>リスクとリターン：</strong><br>
-            落ちそうになるハラハラ感。<br>
-            ギリギリまで傾けて進めた達成感。
-          </p>
-          <p>
-            <strong>テストプレイからの改善：</strong><br>
             シーソーがプレイヤーに対して軽く、落ちやすかったため、重さのバランスを調整しました。<br>
             Playerキャラが簡単に落ちなくなり、バランスを調整するというゲームの核が際立ちました。
           </p>
@@ -505,13 +507,15 @@
         <div class="facts">
           <span>ジャンル：弾避けアクションゲーム</span>
           <span>制作期間：2週間</span>
-          <span>担当：企画・制作・実装</span>
-          <span>Unity / C#</span>
+          <span>Unity / C# / Medly</span>
         </div>
 
-        <p>
-          <strong>目指した体験：</strong><br>
-          曲を最後まで聴いてもらえるよう、曲が終わるまで玉を避けるゲームにしました。
+        <p class="role">担当：企画・制作・実装</p>
+
+        <p class="feature-callout">
+          <strong>企画のきっかけ：</strong><br>
+          曲を最後まで聴いてほしい。<br>
+          その思いから、曲が終わるまで玉を避けるゲームを企画しました。
         </p>
 
         <p class="plan-help">企画書を押すと大きく表示します。</p>
@@ -530,6 +534,9 @@
         <a class="play" href="https://unityroom.com/games/galaxyball" target="_blank" rel="noopener noreferrer">▶ unityroomで遊ぶ</a>
 
         <div class="memo">
+          <h4>✎ リスクとリターン</h4>
+          <p>避けられたときは、自分で操作して切り抜けた手応えがあります。避けられなかったときは、操作がうまくいかなかったと感じる体験を目指しました。</p>
+
           <h4>✎ テストプレイからの改善</h4>
           <p>
             玉を円形から楕円形に変更しました。<br>
@@ -544,15 +551,13 @@
           </p>
           <p>
             3ステージ構成ですが、ステージ3がステージ2より簡単に感じられます。<br>
-            ステージ3は曲の盛り上がりに合わせて難しくする狙いでしたが、難易度の上昇が緩やかになりました。<br>
+            曲の盛り上がりに合わせて難しくする狙いでしたが、難易度の上昇が緩やかになりました。<br>
             曲の展開と障害物の量や速さを合わせ、意図した難易度カーブになるよう調整したいです。
           </p>
         </div>
       </article>
 
       <h2 class="section-title">過去1年半の制作実績</h2>
-      <h3>制作した15作品の紹介動画</h3>
-
       <iframe
         class="video"
         src="https://www.youtube-nocookie.com/embed/YxCVEY0uORY"
@@ -682,6 +687,23 @@
           <p><strong>目指した体験：</strong><br>最後まで順位が予測できない、運試しのような体験。</p>
           <p><strong>企画：</strong><br>学校の先生の原案をもとに、順位に関係なく数字に当たるルールへ変更し、順位が入れ替わる機会を増やしました。</p>
           <a class="play" href="https://siroround.itch.io/change-your-ranking" target="_blank" rel="noopener noreferrer">▶ itch.ioで遊ぶ</a>
+        </article>
+      </section>
+
+      <h2 class="section-title">ボタン制作例</h2>
+      <p>未掲載作品で使用したボタンをIllustratorで制作。ゲーム画面のスクリーンショットから紹介します。</p>
+
+      <section class="button-examples" aria-label="ボタン制作例">
+        <article class="button-card">
+          <h3>肉球ボタン</h3>
+          <img src="./paw-button.png" alt="猫の肉球をモチーフにしたゲームスタート・リトライ兼用ボタン" loading="lazy">
+          <p>猫の肉球をモチーフにした、ゲームスタートとリトライ兼用のボタン。</p>
+        </article>
+
+        <article class="button-card">
+          <h3>どくろボタン</h3>
+          <img src="./skull-button.png" alt="エネミーを爆発させるどくろボタン" loading="lazy">
+          <p>エネミーを爆発させる操作ボタン。</p>
         </article>
       </section>
 
