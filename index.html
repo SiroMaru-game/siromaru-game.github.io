@@ -523,11 +523,18 @@
       .page {
         padding: 18px 10px;
         border-radius: 16px;
-        background-position: 11px 16px;
+
+        /* スマホでは赤い縦線を消し、横罫線だけ残す */
+        background-image:
+          repeating-linear-gradient(
+            transparent 0 39px,
+            #dce8e9 40px 41px
+          );
+        background-position: 0 0;
       }
 
       .content {
-        padding-left: 34px;
+        padding: 0 12px;
       }
 
       .topline {
@@ -622,6 +629,7 @@
           <h1>しろまるの<br>制作ノート</h1>
           <p>アイデアが遊べる形になるまでの、企画と試行錯誤をまとめています。</p>
         </div>
+
         <figure class="profile-portrait">
           <img src="./しろまる.png" alt="しろまるの自画像">
           <figcaption>しろまる（自画像）</figcaption>
@@ -677,7 +685,7 @@
       </nav>
 
       <section id="pickup">
-        <h2 class="section-title">特に見てほしい代表作</h2>
+        <h2 class="section-title">👑 特に見てほしい代表作</h2>
 
         <article class="pickup">
           <span class="pickup-label">PICKUP #01</span>
@@ -740,6 +748,7 @@
               シーソーがプレイヤーに対して軽く、プレイヤーが落ちやすかったため、重さのバランスを調整しました。<br>
               プレイヤーキャラが簡単に落ちなくなり、バランスを調整するというゲームの核が際立ちました。
             </p>
+
             <h4>📌 残っているバグ・今後の研究メモ</h4>
             <p>方向転換でプレイヤーが滑って見えるため、回転速度を合わせたいと考えています。</p>
           </div>
@@ -815,7 +824,7 @@
 
       <section id="archive">
         <h2 class="section-title">掲載作品（13作品）</h2>
-        <p class="section-note">制作した順に並べています。各ゲーム遊べます。</p>
+        <p class="section-note">制作した順に並べています。作品名から各ゲームを遊べます。</p>
 
         <div class="archive">
           <article class="card">
@@ -939,20 +948,20 @@
       </section>
 
       <section id="buttons">
-        <h2 class="section-title">UI制作例</h2>
-        <p class="section-note">Illustratorで制作した未掲載ゲームのボタン。</p>
+        <h2 class="section-title">ボタン制作例</h2>
+        <p class="section-note">未掲載作品で使用したボタンをIllustratorで制作。ゲーム画面のスクリーンショットから紹介します。</p>
 
         <div class="button-examples">
           <article class="button-card">
             <h3>肉球ボタン</h3>
-            <img src="./paw-button.png" alt="猫の肉球をモチーフにしたゲームスタート用ボタン" loading="lazy">
-            <p>猫の肉球をモチーフにした、ゲームスタートのボタン。</p>
+            <img src="./paw-button.png" alt="猫の肉球をモチーフにしたゲームスタート・リトライ兼用ボタン" loading="lazy">
+            <p>猫の肉球をモチーフにした、ゲームスタートとリトライ兼用のボタン。</p>
           </article>
 
           <article class="button-card">
             <h3>どくろボタン</h3>
-            <img src="./skull-button.png" alt="エネミーが爆発するどくろボタン" loading="lazy">
-            <p>エネミーが爆発するボタン。</p>
+            <img src="./skull-button.png" alt="エネミーを爆発させるどくろボタン" loading="lazy">
+            <p>エネミーを爆発させる操作ボタン。</p>
           </article>
         </div>
       </section>
@@ -964,6 +973,9 @@
 
       <footer>しろまるの制作ノート</footer>
     </div>
+  </main>
+</body>
+</html>
   </main>
 </body>
 </html>
